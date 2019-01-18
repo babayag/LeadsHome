@@ -14,6 +14,7 @@ export const loadUser = () => {
         return fetch("/api/auth/user/", {headers, })
             .then(res => {
                 if (res.status < 500) {
+                    console.log("here" + res.text())
                     return res.json().then(data => {
                         return {status: res.status, data};
                     })
